@@ -6,6 +6,7 @@ import {FooterComponent} from './footer/footer.component';
 import {FlowerDetailsComponent} from './flower-details/flower-details.component';
 import {FlowerListComponent} from './flower-list/flower-list.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {FlowerDataService} from './flower-data.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     BrowserModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [FlowerDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
