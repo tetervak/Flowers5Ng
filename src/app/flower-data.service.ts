@@ -1,6 +1,8 @@
 import {Flower} from './flower';
 import {Injectable} from '@angular/core';
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class FlowerDataService {
   // to initialize the flowers
   private static names: string[] = ['aster', 'carnation', 'daffodil', 'orchid', 'rose'];
