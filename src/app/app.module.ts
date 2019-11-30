@@ -1,23 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import {FooterComponent} from './footer/footer.component';
 import {FlowerDetailsComponent} from './flower-details/flower-details.component';
 import {FlowerListComponent} from './flower-list/flower-list.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FlowerDataService} from './flower-data.service';
+import {FooterModule} from './footer/footer.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
     FlowerDetailsComponent,
     FlowerListComponent
   ],
   imports: [
     BrowserModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FooterModule
   ],
   providers: [FlowerDataService],
   bootstrap: [AppComponent]
