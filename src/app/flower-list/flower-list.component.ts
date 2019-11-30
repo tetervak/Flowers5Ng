@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Flower} from './flower';
+import {Flower} from '../flower';
 
 @Component({
   selector: 'app-flower-list',

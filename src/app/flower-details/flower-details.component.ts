@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Flower} from './flower';
+import {Flower} from '../flower';
 
 @Component({
   selector: 'app-flower-details',
