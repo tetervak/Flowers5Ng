@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Flower} from './flower';
 import {FlowerDataService} from './flower-data.service';
 
@@ -7,19 +7,19 @@ import {FlowerDataService} from './flower-data.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  // to initialize the flowers
-  private static names: string[] = ['aster', 'carnation', 'daffodil', 'orchid', 'rose'];
-  // all flower objects
-  public flowerList: Flower[];
-  // the selected flower object
-  public selectedFlower: Flower;
+export class AppComponent implements OnInit {
   public title = 'Flowers 5 Ng';
-  constructor(flowerData: FlowerDataService) {
-    this.flowerList = flowerData.getFlowers();
+  public flowerList: Flower[];
+  public selectedFlower: Flower;
+  private flowerDataService: FlowerDataService;
+  constructor(flowerDataService: FlowerDataService) {
+    this.flowerDataService = flowerDataService;
+  }
+  ngOnInit(): void {
+    this.flowerList = this.flowerDataService.getFlowers();
     this.selectFlower(this.flowerList[0]);
   }
-  // show the flower by the index
+  // show the flower
   public selectFlower(flower: Flower) {
     this.selectedFlower = flower;
   }
